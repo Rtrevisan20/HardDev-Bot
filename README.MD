@@ -7,5 +7,5 @@
     <a href="https://nodejs.org/en/">🔗 NodeJS</a>
     <a href="https://www.npmjs.com/package/venom-bot">🧠 Venom Bot</a>
 </h1>
-<p align="center">🚀 Projeto criado com o intuito de auxiliar nas demandas de pedidos da empresa "Delícias da Neide" via WhatsApp.</p>
+<p align="center">🚀 Projeto criado com o intuito de auxiliar nas demandas de pedidos da empresa "Dabel Personalizados" via WhatsApp.</p>
 <br>
