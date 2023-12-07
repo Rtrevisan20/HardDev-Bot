@@ -13,9 +13,9 @@ export const WelcomeMessage = {
 Eu sou Eliezer, o *assistente virtual* da ${instanceBot.getSessionName}.
 *Em que Posso te ajudar?* 🙋‍♂️
 -----------------------------------
-1 - Valor das Canecas
-2 - Taxa de Entrega
-3 - Fazer Pedido
+1️⃣ - Valor das Canecas
+2️⃣ - Taxa de Entrega
+3️⃣ - Fazer Pedido
 `
     await instanceBot.sendText({ to: from, message })
   },

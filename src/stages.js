@@ -1,6 +1,7 @@
 import {
   WelcomeMessage,
   Menu,
+  Pedido,
 } from './stages/index.js'
 
 import { storage } from './storage.js'
@@ -13,6 +14,10 @@ export const stages = [
   {
     description: 'MENU',
     stage: Menu,
+  },
+  {
+    description: 'PEDIDO',
+    stage: Pedido,
   },
 ]
 

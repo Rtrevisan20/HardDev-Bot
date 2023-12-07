@@ -1,4 +1,5 @@
 import { Bot } from '../bot.js'
+import { products } from '../products/products.js'
 import { storage } from '../storage.js'
 import { STAGES, WelcomeMessage } from './index.js'
 
@@ -33,18 +34,15 @@ export const Menu = {
 const options = {
   //Valor dos produtos
   1: () => {
-    let message = `
-💸💸💸  *Valores*  💸💸💸
-Canecas brancas: *R$ 35,00*
-Canecas coloridas: *R$ 40,00*
-Canecas com alça coração: *R$ 45,00*
+    let message = '💸💸💸 *Valor das Canecas* 💸💸💸 \n\n'
+
+    Object.keys(products).forEach((value) => {
+      message += `${products[value].description} - R$ ${products[value].price},00\n`
+    })
+    message += `
 Todos os preços já estão inclusos a arte, você pode colocar o que quiser na caneca,
-fotos, frases, desenhos e etc.
------------------------------------
-1 - Valor das Canecas
-2 - Taxa de Entrega
-3 - Fazer Pedido
-`
+fotos, frases, desenhos e etc.`
+    message += msgDefault;
     return {
       message,
       nextStage: STAGES.MENU,
@@ -55,17 +53,39 @@ fotos, frases, desenhos e etc.
     let message = `
 🚉🚉🚉  *Taxa de entrega*  🚉🚉🚉
 Dentro da Cidade de Rio Brilhante - Ms: *R$ 0,00*
-Em outras cidades consultar valor do frete com nossos vendedores.
------------------------------------
-1 - Valor das Canecas
-2 - Taxa de Entrega
-3 - Fazer Pedido
-`
+Em outras cidades consultar valor do frete com nossos vendedores.`
+    message += msgDefault;
     return {
       message,
       nextStage: STAGES.MENU,
     }
   },
   //Fazer um pedido
-  3: () => { },
+  3: () => {
+    let message = '*Produtos*\n\n'
+
+    Object.keys(products).forEach((value) => {
+      message += `${numbers[value]} - _${products[value].description}_ - R$ ${products[value].price},00\n`
+    })
+    message += `⚠️Selecione um produto de cada vez.⚠️`
+
+    return {
+      message,
+      nextStage: STAGES.PEDIDO,
+    }
+  },
+}
+
+let msgDefault = `
+-----------------------------------
+1️⃣ - Valor das Canecas
+2️⃣ - Taxa de Entrega
+3️⃣ - Fazer Pedido
+`
+const numbers = {
+  1: '1️⃣',
+  2: '2️⃣',
+  3: '3️⃣',
+  4: '4️⃣',
+  5: '5️⃣',
 }
