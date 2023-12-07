@@ -1,6 +1,6 @@
 import {
   estagioInicial,
-  // stageOne,
+  estagioUm,
   // stageTwo,
   // stageThree,
   // stageFour,
@@ -14,26 +14,10 @@ export const stages = [
     descricao: 'Welcome',
     stage: estagioInicial,
   },
-  // {
-  //   descricao: 'Menu',
-  //   stage: stageOne,
-  // },
-  // {
-  //   descricao: 'Address',
-  //   stage: stageTwo,
-  // },
-  // {
-  //   descricao: 'Bill',
-  //   stage: stageThree,
-  // },
-  // {
-  //   descricao: 'New Order',
-  //   stage: stageFour,
-  // },
-  // {
-  //   descricao: 'Assistent',
-  //   stage: finalStage,
-  // },
+  {
+    descricao: 'Precos',
+    stage: estagioUm,
+  }
 ]
 
 export function getStage({ from }) {

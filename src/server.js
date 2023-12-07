@@ -5,7 +5,7 @@ const main = async () => {
   try {
     const instanceBot = await Bot.getInstance().init({
       session: 'Dabel Personalizados',
-      headless: true,
+      headless: 'new',
       useChrome: false,
     })
 

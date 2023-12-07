@@ -3,6 +3,7 @@ import { create } from "venom-bot";
 export class Bot {
   #secao
   #instanceBot
+
   static getInstance() {
     if (Bot.instance === undefined) Bot.instance = new Bot()
     return Bot.instance
@@ -14,7 +15,7 @@ export class Bot {
       session,
       headless,
       useChrome,
-      // multidevice: false,
+      multidevice: false,
     })
     return this
   }
@@ -24,7 +25,7 @@ export class Bot {
   }
 
   async onMessage(callback) {
-    if (this.#instanceBot) throw new Error('Bot não Inicializado!')
+    if (!this.#instanceBot) throw new Error('Bot não Inicializado!')
     return await this.#instanceBot.onMessage(callback)
   }
 
@@ -46,7 +47,7 @@ export class Bot {
   }
 
   async markUnseenMessage({ to }) {
-    if (this.#instanceBot) throw new Error('Bot não Inicializado!')
+    if (!this.#instanceBot) throw new Error('Bot não Inicializado!')
     return await this.#instanceBot.markUnseenMessage(to)
   }
 }
