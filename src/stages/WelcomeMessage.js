@@ -1,0 +1,22 @@
+import { storage } from '../storage.js'
+import { Bot } from '../bot.js'
+import { STAGES } from './index.js'
+
+export const WelcomeMessage = {
+  async exec({ from }) {
+    storage[from].stage = STAGES.MENU
+    const instanceBot = await Bot.getInstance()
+
+    const message =
+      `
+👋 Olá, como vai?
+Eu sou Eliezer, o *assistente virtual* da ${instanceBot.getSessionName}.
+*Em que Posso te ajudar?* 🙋‍♂️
+-----------------------------------
+1 - Valor das Canecas
+2 - Taxa de Entrega
+3 - Fazer Pedido
+`
+    await instanceBot.sendText({ to: from, message })
+  },
+}

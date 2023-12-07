@@ -1,7 +1,8 @@
-export * from './Estagio1.js'
-export * from './EstagioInicial.js'
+export * from './WelcomeMessage.js'
+export * from './Menu.js'
 
 export const STAGES = {
-  INICIAL: '0',
-  PRECO: '1',
+  WELCOME: '0',
+  MENU: '1',
+  END: '9',
 }

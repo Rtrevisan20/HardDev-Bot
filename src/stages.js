@@ -1,23 +1,19 @@
 import {
-  estagioInicial,
-  estagioUm,
-  // stageTwo,
-  // stageThree,
-  // stageFour,
-  // finalStage,
+  WelcomeMessage,
+  Menu,
 } from './stages/index.js'
 
 import { storage } from './storage.js'
 
 export const stages = [
   {
-    descricao: 'Welcome',
-    stage: estagioInicial,
+    description: 'WELCOME',
+    stage: WelcomeMessage,
   },
   {
-    descricao: 'Precos',
-    stage: estagioUm,
-  }
+    description: 'MENU',
+    stage: Menu,
+  },
 ]
 
 export function getStage({ from }) {
